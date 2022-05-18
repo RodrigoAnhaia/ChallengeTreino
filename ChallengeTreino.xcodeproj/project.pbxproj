@@ -15,7 +15,8 @@
 		E0041BED2833DB13006F1B30 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E0041BEC2833DB13006F1B30 /* FirebaseFirestoreSwift */; };
 		E0041BEF2833DB13006F1B30 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E0041BEE2833DB13006F1B30 /* FirebaseStorage */; };
 		E0041BF2283407C6006F1B30 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0041BF1283407C6006F1B30 /* ViewModel.swift */; };
-		E0041BF428346388006F1B30 /* AutenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0041BF328346388006F1B30 /* AutenticationView.swift */; };
+		E0041BF428346388006F1B30 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0041BF328346388006F1B30 /* AuthenticationView.swift */; };
+		E0041BFC283491C8006F1B30 /* PurpleGradienteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0041BFB283491C8006F1B30 /* PurpleGradienteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,8 @@
 		E0041BE22833D0CB006F1B30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E0041BE92833D126006F1B30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0041BF1283407C6006F1B30 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		E0041BF328346388006F1B30 /* AutenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutenticationView.swift; sourceTree = "<group>"; };
+		E0041BF328346388006F1B30 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		E0041BFB283491C8006F1B30 /* PurpleGradienteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleGradienteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				E0041BDB2833D0C8006F1B30 /* ChallengeTreinoApp.swift */,
+				E0041BFA283491B0006F1B30 /* Extensions */,
 				E0041BF0283407B7006F1B30 /* ViewModel */,
-				E0041BDD2833D0C8006F1B30 /* ContentView.swift */,
-				E0041BF328346388006F1B30 /* AutenticationView.swift */,
+				E0041BF728346E17006F1B30 /* Views */,
 				E0041BE92833D126006F1B30 /* GoogleService-Info.plist */,
 				E0041BDF2833D0CB006F1B30 /* Assets.xcassets */,
 				E0041BE12833D0CB006F1B30 /* Preview Content */,
@@ -86,6 +88,23 @@
 				E0041BF1283407C6006F1B30 /* ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0041BF728346E17006F1B30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0041BDD2833D0C8006F1B30 /* ContentView.swift */,
+				E0041BF328346388006F1B30 /* AuthenticationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E0041BFA283491B0006F1B30 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E0041BFB283491C8006F1B30 /* PurpleGradienteButton.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,8 +186,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0041BDE2833D0C8006F1B30 /* ContentView.swift in Sources */,
-				E0041BF428346388006F1B30 /* AutenticationView.swift in Sources */,
+				E0041BF428346388006F1B30 /* AuthenticationView.swift in Sources */,
 				E0041BF2283407C6006F1B30 /* ViewModel.swift in Sources */,
+				E0041BFC283491C8006F1B30 /* PurpleGradienteButton.swift in Sources */,
 				E0041BDC2833D0C8006F1B30 /* ChallengeTreinoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

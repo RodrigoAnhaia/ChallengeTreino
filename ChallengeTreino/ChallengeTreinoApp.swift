@@ -6,18 +6,14 @@
 //
 
 import SwiftUI
-import Firebase
 
 @main
 struct ChallengeTreinoApp: App {
-    
-    init() {
-        FirebaseApp.configure()
-    }
-    
+    let persistenceController = PersistenceController.shared
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

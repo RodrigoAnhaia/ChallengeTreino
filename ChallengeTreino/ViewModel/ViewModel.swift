@@ -5,53 +5,59 @@
 //  Created by Rodrigo de Anhaia on 17/05/22.
 //
 
-import Foundation
-import CoreData
+import UIKit
 
 @MainActor class ViewModel: ObservableObject {
-    @Published var treino: Treino?
-    @Published var exercicio: Exercicio?
+    @Published var workoutList: [Workout] = []
+    @Published var exercisesList: [Exercise] = []
+    var workout: Workout!
     
-    var viewContext = PersistenceController.shared.container.viewContext
-
-    func newTreino(nome: Int, descricao: String, data: Date) {
-        treino?.nome = NSDecimalNumber(value: nome)
-        treino?.descricao = descricao
-        treino?.data = data
+    init() {
+        listAllWorkout()
+        listAllExercise()
         
-        do {
-            try viewContext.save()
-        } catch {
-            print(error)
-        }
     }
     
-    func newExercicio(nome: Int, imagem: URL, observacoes: String) {
-        exercicio?.nome = NSDecimalNumber(value: nome)
-        exercicio?.imagem = imagem
-        exercicio?.observacoes = observacoes
-        
-        do {
-            try viewContext.save()
-        } catch {
-            print(error)
-        }
-        
+    // MARK: - Workout
+    func listAllWorkout() {
+        workoutList.append(Workout(name: 0, description: "Legs", date: .now))
+        workoutList.append(Workout(name: 1, description: "Chest", date: .now + 72))
+    }
+    
+    func newWorkout(newName: Int, newDescription: String, newDate: Date) {
+        workoutList.append(Workout(name: newName, description: newDescription, date: newDate))
+    }
+    
+    func deleteWorkout(at offsets: IndexSet) {
+        workoutList.remove(atOffsets: offsets)
+    }
+    
+    // MARK: - Exercise
+    func listAllExercise() {
+        exercisesList.append(Exercise(name: 0, image: "background", comments: "conveyor"))
+        exercisesList.append(Exercise(name: 1, image: "", comments: "bar"))
+    }
+    
+    func newExercise(newName: Int, newImage: String, newComments: String) {
+        exercisesList.append(Exercise(name: newName, image: newImage, comments: newComments))
+    }
+    
+    func deleteExercise(at offsets: IndexSet) {
+        exercisesList.remove(atOffsets: offsets)
     }
 }
 
-extension Treino {
-    static var fetchAll: NSFetchRequest<Treino> {
-        let request: NSFetchRequest<Treino> = Treino.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Treino.nome, ascending: true)]
-        return request
-    }
+struct Workout: Identifiable {
+    var id = UUID().uuidString
+    var name: Int
+    var description: String
+    var date: Date
 }
 
-extension Exercicio {
-    static var fetchAll: NSFetchRequest<Exercicio> {
-        let request: NSFetchRequest<Exercicio> = Exercicio.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Exercicio.nome, ascending: true)]
-        return request
-    }
+struct Exercise: Identifiable  {
+    var id = UUID().uuidString
+    var name: Int
+    var image: String
+    var comments: String 
+
 }

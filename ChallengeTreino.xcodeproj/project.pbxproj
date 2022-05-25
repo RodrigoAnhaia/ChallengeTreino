@@ -9,26 +9,42 @@
 /* Begin PBXBuildFile section */
 		E0041BDC2833D0C8006F1B30 /* ChallengeTreinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0041BDB2833D0C8006F1B30 /* ChallengeTreinoApp.swift */; };
 		E0041BDE2833D0C8006F1B30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0041BDD2833D0C8006F1B30 /* ContentView.swift */; };
-		E0041BE02833D0CB006F1B30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0041BDF2833D0CB006F1B30 /* Assets.xcassets */; };
 		E0041BE32833D0CB006F1B30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0041BE22833D0CB006F1B30 /* Preview Assets.xcassets */; };
 		E0041BF2283407C6006F1B30 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0041BF1283407C6006F1B30 /* ViewModel.swift */; };
 		E0041BF428346388006F1B30 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0041BF328346388006F1B30 /* AuthenticationView.swift */; };
 		E0041BFC283491C8006F1B30 /* PurpleGradienteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0041BFB283491C8006F1B30 /* PurpleGradienteButton.swift */; };
-		E030E189283547C000BFCE9F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E030E187283547C000BFCE9F /* Model.xcdatamodeld */; };
-		E032C47428354FB400C845FF /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E032C47328354FB400C845FF /* PersistenceController.swift */; };
+		E030B00F283E5F010036ADA4 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030B00E283E5F010036ADA4 /* WorkoutView.swift */; };
+		E030B011283EB4B20036ADA4 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030B010283EB4B20036ADA4 /* ExerciseView.swift */; };
+		E032C4782835BFF200C845FF /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E032C4772835BFF200C845FF /* CustomTabView.swift */; };
+		E0C8C1A52839BDD000537541 /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8C1A42839BDD000537541 /* AddExerciseView.swift */; };
+		E0C8C1A8283A942900537541 /* WorkoutsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8C1A7283A942900537541 /* WorkoutsRowView.swift */; };
+		E0C8C1AB283ACFCD00537541 /* DateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8C1AA283ACFCD00537541 /* DateString.swift */; };
+		E0C8C1AE283AD12400537541 /* ExerciseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8C1AD283AD12400537541 /* ExerciseRowView.swift */; };
+		E0C8C1B0283AD49A00537541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C8C1AF283AD49A00537541 /* Assets.xcassets */; };
+		E0C8C1B2283AE73100537541 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8C1B1283AE73100537541 /* ProfileView.swift */; };
+		E0DFD2DF2836A61900739CE4 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFD2DE2836A61900739CE4 /* AddWorkoutView.swift */; };
+		E0DFD2E12836A81A00739CE4 /* PurpleCircleGradienteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFD2E02836A81A00739CE4 /* PurpleCircleGradienteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E0041BD82833D0C8006F1B30 /* ChallengeTreino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeTreino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0041BDB2833D0C8006F1B30 /* ChallengeTreinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTreinoApp.swift; sourceTree = "<group>"; };
 		E0041BDD2833D0C8006F1B30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E0041BDF2833D0CB006F1B30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0041BE22833D0CB006F1B30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E0041BF1283407C6006F1B30 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E0041BF328346388006F1B30 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		E0041BFB283491C8006F1B30 /* PurpleGradienteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleGradienteButton.swift; sourceTree = "<group>"; };
-		E030E188283547C000BFCE9F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		E032C47328354FB400C845FF /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		E030B00E283E5F010036ADA4 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		E030B010283EB4B20036ADA4 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		E032C4772835BFF200C845FF /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		E0C8C1A42839BDD000537541 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
+		E0C8C1A7283A942900537541 /* WorkoutsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsRowView.swift; sourceTree = "<group>"; };
+		E0C8C1AA283ACFCD00537541 /* DateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateString.swift; sourceTree = "<group>"; };
+		E0C8C1AD283AD12400537541 /* ExerciseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRowView.swift; sourceTree = "<group>"; };
+		E0C8C1AF283AD49A00537541 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E0C8C1B1283AE73100537541 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		E0DFD2DE2836A61900739CE4 /* AddWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutView.swift; sourceTree = "<group>"; };
+		E0DFD2E02836A81A00739CE4 /* PurpleCircleGradienteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleCircleGradienteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +77,11 @@
 		E0041BDA2833D0C8006F1B30 /* ChallengeTreino */ = {
 			isa = PBXGroup;
 			children = (
+				E0C8C1AF283AD49A00537541 /* Assets.xcassets */,
 				E0041BDB2833D0C8006F1B30 /* ChallengeTreinoApp.swift */,
-				E030E187283547C000BFCE9F /* Model.xcdatamodeld */,
-				E032C475283553D200C845FF /* Controllers */,
 				E0041BFA283491B0006F1B30 /* Extensions */,
 				E0041BF0283407B7006F1B30 /* ViewModel */,
 				E0041BF728346E17006F1B30 /* Views */,
-				E0041BDF2833D0CB006F1B30 /* Assets.xcassets */,
 				E0041BE12833D0CB006F1B30 /* Preview Content */,
 			);
 			path = ChallengeTreino;
@@ -92,8 +106,14 @@
 		E0041BF728346E17006F1B30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0C8C1AC283AD0F100537541 /* ExercicioViews */,
+				E0C8C1A9283A962900537541 /* TreinoViews */,
 				E0041BDD2833D0C8006F1B30 /* ContentView.swift */,
-				E0041BF328346388006F1B30 /* AuthenticationView.swift */,
+				E030B013283EC6930036ADA4 /* UserInfos */,
+				E032C4772835BFF200C845FF /* CustomTabView.swift */,
+				E030B012283EC6830036ADA4 /* Authentication */,
+				E0DFD2DD2836A5AC00739CE4 /* Create Account */,
+				E0DFD2DC2836A58600739CE4 /* Sign In */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -102,16 +122,60 @@
 			isa = PBXGroup;
 			children = (
 				E0041BFB283491C8006F1B30 /* PurpleGradienteButton.swift */,
+				E0DFD2E02836A81A00739CE4 /* PurpleCircleGradienteButton.swift */,
+				E0C8C1AA283ACFCD00537541 /* DateString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		E032C475283553D200C845FF /* Controllers */ = {
+		E030B012283EC6830036ADA4 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				E032C47328354FB400C845FF /* PersistenceController.swift */,
+				E0041BF328346388006F1B30 /* AuthenticationView.swift */,
 			);
-			path = Controllers;
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E030B013283EC6930036ADA4 /* UserInfos */ = {
+			isa = PBXGroup;
+			children = (
+				E0C8C1B1283AE73100537541 /* ProfileView.swift */,
+			);
+			path = UserInfos;
+			sourceTree = "<group>";
+		};
+		E0C8C1A9283A962900537541 /* TreinoViews */ = {
+			isa = PBXGroup;
+			children = (
+				E0C8C1A7283A942900537541 /* WorkoutsRowView.swift */,
+				E0DFD2DE2836A61900739CE4 /* AddWorkoutView.swift */,
+				E030B00E283E5F010036ADA4 /* WorkoutView.swift */,
+			);
+			path = TreinoViews;
+			sourceTree = "<group>";
+		};
+		E0C8C1AC283AD0F100537541 /* ExercicioViews */ = {
+			isa = PBXGroup;
+			children = (
+				E0C8C1AD283AD12400537541 /* ExerciseRowView.swift */,
+				E030B010283EB4B20036ADA4 /* ExerciseView.swift */,
+				E0C8C1A42839BDD000537541 /* AddExerciseView.swift */,
+			);
+			path = ExercicioViews;
+			sourceTree = "<group>";
+		};
+		E0DFD2DC2836A58600739CE4 /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Sign In";
+			sourceTree = "<group>";
+		};
+		E0DFD2DD2836A5AC00739CE4 /* Create Account */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Create Account";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,8 +240,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0C8C1B0283AD49A00537541 /* Assets.xcassets in Resources */,
 				E0041BE32833D0CB006F1B30 /* Preview Assets.xcassets in Resources */,
-				E0041BE02833D0CB006F1B30 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,12 +253,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0041BDE2833D0C8006F1B30 /* ContentView.swift in Sources */,
-				E032C47428354FB400C845FF /* PersistenceController.swift in Sources */,
+				E0DFD2DF2836A61900739CE4 /* AddWorkoutView.swift in Sources */,
+				E032C4782835BFF200C845FF /* CustomTabView.swift in Sources */,
+				E0C8C1AB283ACFCD00537541 /* DateString.swift in Sources */,
+				E0C8C1A52839BDD000537541 /* AddExerciseView.swift in Sources */,
 				E0041BF428346388006F1B30 /* AuthenticationView.swift in Sources */,
+				E0DFD2E12836A81A00739CE4 /* PurpleCircleGradienteButton.swift in Sources */,
+				E030B00F283E5F010036ADA4 /* WorkoutView.swift in Sources */,
+				E0C8C1B2283AE73100537541 /* ProfileView.swift in Sources */,
+				E030B011283EB4B20036ADA4 /* ExerciseView.swift in Sources */,
+				E0C8C1AE283AD12400537541 /* ExerciseRowView.swift in Sources */,
+				E0C8C1A8283A942900537541 /* WorkoutsRowView.swift in Sources */,
 				E0041BF2283407C6006F1B30 /* ViewModel.swift in Sources */,
 				E0041BFC283491C8006F1B30 /* PurpleGradienteButton.swift in Sources */,
 				E0041BDC2833D0C8006F1B30 /* ChallengeTreinoApp.swift in Sources */,
-				E030E189283547C000BFCE9F /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,19 +467,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E030E187283547C000BFCE9F /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E030E188283547C000BFCE9F /* Model.xcdatamodel */,
-			);
-			currentVersion = E030E188283547C000BFCE9F /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E0041BD02833D0C8006F1B30 /* Project object */;
 }

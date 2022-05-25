@@ -10,10 +10,10 @@
         <attribute name="data" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descricao" optional="YES" attributeType="String"/>
         <attribute name="nome" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
-        <relationship name="exercicio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercicio" inverseName="treino" inverseEntity="Exercicio"/>
+        <relationship name="exercicio" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercicio" inverseName="treino" inverseEntity="Exercicio"/>
     </entity>
     <elements>
-        <element name="Treino" positionX="-63" positionY="-18" width="128" height="89"/>
-        <element name="Exercicio" positionX="-54" positionY="18" width="128" height="89"/>
+        <element name="Exercicio" positionX="172.3211669921875" positionY="-62.81997680664062" width="128" height="89"/>
+        <element name="Treino" positionX="-384.8382568359375" positionY="-5.51727294921875" width="128" height="89"/>
     </elements>
 </model>

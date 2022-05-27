@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
 
-    func toDate(withFormat format: String = "dd/MM/yy hh:mm")-> Date?{
+    func toDate(withFormat format: String = "dd/MM/yy HH:mm a")-> Date?{
 
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.current
@@ -25,7 +25,7 @@ extension String {
 
 extension Date {
 
-    func toString(withFormat format: String = "dd/MM/yyyy hh:mm") -> String {
+    func toString(withFormat format: String = "dd/MM/yyyy HH:mm a") -> String {
 
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current

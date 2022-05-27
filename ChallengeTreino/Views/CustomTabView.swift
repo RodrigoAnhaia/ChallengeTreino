@@ -16,17 +16,17 @@ struct CustomTabView: View {
                 .tabItem {
                     Image("treinoIcon")
                     Text("Workouts")
-                }
+                }.tag(0)
             ExerciseView(viewModel: viewModel)
                 .tabItem {
                     Image("exerIcon")
                     Text("Exercises")
-                }
+                }.tag(1)
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
-                }
+                }.tag(2)  
         }
     }
 }

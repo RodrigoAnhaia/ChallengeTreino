@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct AuthenticationView: View {
+struct SignUpView: View {
+    @ObservedObject var viewModelAut: ViewModelAuthtentication
     @Binding var email: String
     @Binding var password: String
+    @Binding var isEmailValid : Bool
     
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
             VStack {
-                Text("Create an Account")
+                Text("Log In an Account")
                     .font(.title)
                     .fontWeight(.heavy)
                     .foregroundColor(.white)
@@ -23,23 +25,37 @@ struct AuthenticationView: View {
             
             Spacer()
             
-            VStack(alignment: .center) {
+            VStack(spacing: 10) {
+                TextField("Type your email", text: $email, onEditingChanged: { (isChanged) in
+                    if !isChanged {
+                        if self.viewModelAut.textFieldValidatorEmail(self.email) {
+                            self.isEmailValid = true
+                        } else {
+                            self.isEmailValid = false
+                            self.email = ""
+                        }
+                    }
+                })
+                .autocapitalization(.none)
+                .padding()
+                .isValided(with: isEmailValid)
                 
-                TextField("Email", text: $email)
+                SecureField("Type your password", text: $password)
+                    .autocapitalization(.none)
                     .padding()
                 
-                SecureField("Password", text: $password)
-                    .padding()
+                    
                 
                 Button("Sign in") {
-                    
+                    print("tapped")
                 }
                 .buttonStyle(PurpleGradienteButton())
             }
-            .padding(.horizontal, 60)
+            .padding()
+            .textFieldStyle(.roundedBorder)
+            .padding()
             
             Spacer()
-            
             
             VStack(spacing: 10) {
                 Button {
@@ -52,17 +68,10 @@ struct AuthenticationView: View {
                     print("Edit button was tapped")
                 } label: {
                     Label("Continue with Google", image: "googleIcon" )
-                        
+                    
                 }
             }
             .buttonStyle(PurpleGradienteButton())
-            
-            Button("If you already have an account") {
-                //holdor
-                print("holdor")
-            }
-            .foregroundColor(.white)
-            .padding()
         }
         .background(Image("backgroundAuthView")
             .resizable()
@@ -70,11 +79,13 @@ struct AuthenticationView: View {
             .frame(height: 900)
             .opacity(0.8)
         )
+        .navigationBarHidden(true)
+        .accentColor(Color(.label))
     }
 }
 
 struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticationView(email: .constant("Email"), password: .constant("password"))
+        SignUpView(viewModelAut: ViewModelAuthtentication(), email: .constant("Email"), password: .constant("password"), isEmailValid: .constant(true))
     }
 }

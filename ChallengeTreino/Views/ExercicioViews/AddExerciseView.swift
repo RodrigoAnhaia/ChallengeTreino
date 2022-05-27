@@ -61,7 +61,7 @@ struct AddExerciseView: View {
     }
 }
 
-struct AddExercicioView_Previews: PreviewProvider {
+struct AddExerciseView_Previews: PreviewProvider {
     static var previews: some View {
         AddExerciseView(viewModel: ViewModel(), name: 0, image: "", comments: "")
     }

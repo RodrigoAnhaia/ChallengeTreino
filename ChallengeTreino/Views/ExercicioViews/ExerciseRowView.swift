@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ExerciseRowView: View {
-    @ObservedObject var viewModel: ViewModel 
+    @ObservedObject var viewModel: ViewModel
+    @State private var showingSheet = false
+    @State var exercise: Exercise
     
     var body: some View {
         VStack {
@@ -27,11 +29,28 @@ struct ExerciseRowView: View {
                             Text(exercise.comments)
                                 .fontWeight(.medium)
                         }
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive) {
+                                self.viewModel.deleteExercise(exercise: exercise)
+                            } label: {
+                                Label("Trash", systemImage: "trash.circle.fill")
+                            }
+                        }
+                        
+                        .swipeActions(edge: .leading)  {
+                            Button(role: .destructive) {
+                                self.showingSheet = true
+                                self.exercise = exercise
+                            } label: {
+                                Label("Edit", systemImage: "pencil.circle.fill")
+                            }
+                            .tint(.indigo)
+                        }
                         .padding()
                         .font(.body)
                         .padding()
                     }
-                    .onDelete(perform: viewModel.deleteExercise)
+        
                 } header: {
                     Text("Exercises")
                         .font(.title3)
@@ -40,11 +59,8 @@ struct ExerciseRowView: View {
             }
             .listStyle(InsetGroupedListStyle())
         }
-    }
-}
-
-struct ExercicioRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExerciseRowView(viewModel: ViewModel())
+        .sheet(isPresented: $showingSheet) {
+            EditExerciseView(viewModel: viewModel, exercise: $exercise)
+        }
     }
 }

@@ -10,7 +10,6 @@ import UIKit
 @MainActor class ViewModel: ObservableObject {
     @Published var workoutList: [Workout] = []
     @Published var exercisesList: [Exercise] = []
-    var workout: Workout!
     
     init() {
         listAllWorkout()
@@ -28,8 +27,16 @@ import UIKit
         workoutList.append(Workout(name: newName, description: newDescription, date: newDate))
     }
     
-    func deleteWorkout(at offsets: IndexSet) {
-        workoutList.remove(atOffsets: offsets)
+    func editWorkout(workout: Workout, newName: Int, newDescription: String, newDate: Date) {
+        if let row = self.workoutList.firstIndex(where: {$0.id == workout.id}) {
+            workoutList[row].name = newName
+            workoutList[row].description = newDescription
+            workoutList[row].date = newDate
+        }
+    }
+    
+    func deleteWorkout(workout: Workout) {
+        workoutList.remove(object: workout)
     }
     
     // MARK: - Exercise
@@ -42,19 +49,27 @@ import UIKit
         exercisesList.append(Exercise(name: newName, image: newImage, comments: newComments))
     }
     
-    func deleteExercise(at offsets: IndexSet) {
-        exercisesList.remove(atOffsets: offsets)
+    func editExercise(exercise: Exercise, newName: Int, newImage: String, newComments: String) {
+        if let row = self.exercisesList.firstIndex(where: {$0.id == exercise.id}) {
+            exercisesList[row].name = newName
+            exercisesList[row].image = newImage
+            exercisesList[row].comments = newComments
+        }
+    }
+    
+    func deleteExercise(exercise: Exercise) {
+        exercisesList.remove(object: exercise)
     }
 }
 
-struct Workout: Identifiable {
+struct Workout: Identifiable, Equatable {
     var id = UUID().uuidString
     var name: Int
     var description: String
     var date: Date
 }
 
-struct Exercise: Identifiable  {
+struct Exercise: Identifiable, Equatable  {
     var id = UUID().uuidString
     var name: Int
     var image: String

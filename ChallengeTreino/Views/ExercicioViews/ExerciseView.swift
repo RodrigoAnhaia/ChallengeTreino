@@ -13,16 +13,17 @@ struct ExerciseView: View {
     
     var body: some View {
         VStack {
-            ExerciseRowView(viewModel: viewModel)
+            ExerciseRowView(viewModel: viewModel, exercise: Exercise.init(name: 0, image: "", comments: ""))
             
             VStack(alignment: .trailing) {
                 Button("") {
                     showingSheet = true
-                }.buttonStyle(PurpleCircleGradienteButton())
-                    .padding(.leading, 220)
-                    .sheet(isPresented: $showingSheet) {
-                        AddExerciseView(viewModel: viewModel, name: 0, image: "", comments: "")
-                    }
+                }
+                .buttonStyle(PurpleCircleGradienteButton())
+                .padding(.leading, 220)
+                .sheet(isPresented: $showingSheet) {
+                    AddExerciseView(viewModel: viewModel, name: 0, image: "", comments: "")
+                }
             }
             .frame(maxWidth: .infinity)
             .background(.thinMaterial)

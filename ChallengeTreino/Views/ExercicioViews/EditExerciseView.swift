@@ -1,18 +1,19 @@
 //
-//  AddView.swift
+//  EditExerciseView.swift
 //  ChallengeTreino
 //
-//  Created by Rodrigo de Anhaia on 19/05/22.
+//  Created by Rodrigo de Anhaia on 26/05/22.
 //
 
 import SwiftUI
 
-struct AddWorkoutView: View {
+struct EditExerciseView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: ViewModel
-    @State var name: Int
-    @State var description: String
-    @State var date: Date
+    @State private var name: Int!
+    @State private var image : String = ""
+    @State private var comments: String = ""
+    @Binding var exercise: Exercise
     
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
@@ -28,21 +29,21 @@ struct AddWorkoutView: View {
             Spacer(minLength: 20)
             
             VStack(spacing: 30) {
-                Text("Add a Workouts")
+                Text("Edit Workouts")
                     .font(.title)
                     .fontWeight(.heavy)
                 
-                TextField("Add a name: ", value: $name, format: .number)
+                TextField("Add a new name: \(exercise.name)", value: $name, format: .number)
                     .frame(width: 300)
                     .textFieldStyle(.roundedBorder)
                     .font(.title3)
                 
-                TextField("Add a description: ", text: $description)
+                TextField("Add a new image: \(exercise.image)", text: $image)
                     .frame(width: 300)
                     .textFieldStyle(.roundedBorder)
                     .font(.title3)
                 
-                TextField("Add a date: ", value: $date, format: .dateTime)
+                TextField("Add a new comment: \(exercise.comments)", text: $comments)
                     .frame(width: 300)
                     .textFieldStyle(.roundedBorder)
                     .font(.title3)
@@ -51,7 +52,7 @@ struct AddWorkoutView: View {
             
             HStack(alignment: .top, spacing: 8.0) {
                 Button("Save") {
-                    viewModel.newWorkout(newName: name, newDescription: description, newDate: date)
+                    viewModel.editExercise(exercise: exercise, newName: name, newImage: image, newComments: comments)
                     dismiss()
                 }
                 .buttonStyle(PurpleGradienteButton())
@@ -59,10 +60,3 @@ struct AddWorkoutView: View {
         }
     }
 }
-
-struct AddWorkoutView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddWorkoutView(viewModel: ViewModel(), name: 0, description: "", date: .now)
-    }
-}
-

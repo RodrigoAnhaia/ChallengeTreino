@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct WorkoutsRowView: View {
-    @ObservedObject var viewModel: ViewModel 
+    @ObservedObject var viewModel: ViewModel
+    @State private var showingSheet = false
+    @State var workout: Workout
     
     var body: some View {
         VStack {
@@ -25,11 +27,27 @@ struct WorkoutsRowView: View {
                             Text(workout.date.toString())
                                 .fontWeight(.medium)
                         }
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive) {
+                                self.viewModel.deleteWorkout(workout: workout)
+                            } label: {
+                                Label("Trash", systemImage: "trash.circle.fill")
+                            }
+                        }
+                        
+                        .swipeActions(edge: .leading)  {
+                            Button(role: .destructive) {
+                                self.showingSheet = true
+                                self.workout = workout
+                            } label: {
+                                Label("Edit", systemImage: "pencil.circle.fill")
+                            }
+                            .tint(.indigo)
+                        }
                         .padding()
                         .font(.body)
                         .padding()
                     }
-                    .onDelete(perform: viewModel.deleteWorkout)
                 } header: {
                     Text("Workouts")
                         .font(.title3)
@@ -38,11 +56,8 @@ struct WorkoutsRowView: View {
             }
             .listStyle(InsetGroupedListStyle())
         }
-    }
-}
-
-struct TreinoRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        WorkoutsRowView(viewModel: ViewModel())
+        .sheet(isPresented: $showingSheet) {
+            EditWorkoutView(viewModel: viewModel, workout: $workout)
+        }
     }
 }

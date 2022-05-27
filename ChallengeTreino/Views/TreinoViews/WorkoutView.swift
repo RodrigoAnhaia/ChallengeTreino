@@ -13,16 +13,17 @@ struct WorkoutView: View {
     
     var body: some View {
         VStack {
-            WorkoutsRowView(viewModel: viewModel)
+            WorkoutsRowView(viewModel: viewModel, workout: .init(name: 0, description: "", date: .now))
             
             VStack(alignment: .trailing) {
                 Button("") {
                     showingSheet = true
-                }.buttonStyle(PurpleCircleGradienteButton())
-                    .padding(.leading, 220)
-                    .sheet(isPresented: $showingSheet) {
-                        AddWorkoutView(viewModel: viewModel, name: 0, description: "", date: .now)
-                    }
+                }
+                .buttonStyle(PurpleCircleGradienteButton())
+                .padding(.leading, 220)
+                .sheet(isPresented: $showingSheet) {
+                    AddWorkoutView(viewModel: viewModel, name: 0, description: "", date: .now)
+                }
             }
             .frame(maxWidth: .infinity)
             .background(.thinMaterial)
@@ -30,7 +31,7 @@ struct WorkoutView: View {
     }
 }
 
-struct TreinoView_Previews: PreviewProvider {
+struct WorkoutView_Previews: PreviewProvider {
     static var previews: some View {
         WorkoutView(viewModel: ViewModel())
     }

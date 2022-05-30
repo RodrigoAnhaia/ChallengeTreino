@@ -44,8 +44,6 @@ struct SignUpView: View {
                     .autocapitalization(.none)
                     .padding()
                 
-                    
-                
                 Button("Sign in") {
                     print("tapped")
                 }

@@ -26,6 +26,8 @@
 		E030B032284261DB0036ADA4 /* ProfCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030B031284261DB0036ADA4 /* ProfCardView.swift */; };
 		E030B039284267150036ADA4 /* NetworkProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030B038284267150036ADA4 /* NetworkProviding.swift */; };
 		E030B04228426EE10036ADA4 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030B04128426EE10036ADA4 /* DataServiceProtocol.swift */; };
+		E030B04428452C380036ADA4 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030B04328452C380036ADA4 /* StatisticView.swift */; };
+		E030B04628452C7C0036ADA4 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030B04528452C7C0036ADA4 /* BarView.swift */; };
 		E032C4782835BFF200C845FF /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E032C4772835BFF200C845FF /* CustomTabView.swift */; };
 		E0C8C1A52839BDD000537541 /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8C1A42839BDD000537541 /* AddExerciseView.swift */; };
 		E0C8C1A8283A942900537541 /* WorkoutsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C8C1A7283A942900537541 /* WorkoutsRowView.swift */; };
@@ -58,6 +60,8 @@
 		E030B031284261DB0036ADA4 /* ProfCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfCardView.swift; sourceTree = "<group>"; };
 		E030B038284267150036ADA4 /* NetworkProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviding.swift; sourceTree = "<group>"; };
 		E030B04128426EE10036ADA4 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProtocol.swift; sourceTree = "<group>"; };
+		E030B04328452C380036ADA4 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		E030B04528452C7C0036ADA4 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		E032C4772835BFF200C845FF /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		E0C8C1A42839BDD000537541 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
 		E0C8C1A7283A942900537541 /* WorkoutsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsRowView.swift; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				E0C8C1B1283AE73100537541 /* ProfileView.swift */,
+				E030B04328452C380036ADA4 /* StatisticView.swift */,
+				E030B04528452C7C0036ADA4 /* BarView.swift */,
 				E030B031284261DB0036ADA4 /* ProfCardView.swift */,
 			);
 			path = UserInfos;
@@ -317,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E030B04628452C7C0036ADA4 /* BarView.swift in Sources */,
 				E0041BDE2833D0C8006F1B30 /* ContentView.swift in Sources */,
 				E030B032284261DB0036ADA4 /* ProfCardView.swift in Sources */,
 				E0DFD2DF2836A61900739CE4 /* AddWorkoutView.swift in Sources */,
@@ -333,6 +340,7 @@
 				E030B011283EB4B20036ADA4 /* ExerciseView.swift in Sources */,
 				E0C8C1AE283AD12400537541 /* ExerciseRowView.swift in Sources */,
 				E030B017284004330036ADA4 /* RemoveObject.swift in Sources */,
+				E030B04428452C380036ADA4 /* StatisticView.swift in Sources */,
 				E030B01B284055060036ADA4 /* SignInView.swift in Sources */,
 				E030B03028425AD20036ADA4 /* Exercise.swift in Sources */,
 				E0C8C1A8283A942900537541 /* WorkoutsRowView.swift in Sources */,

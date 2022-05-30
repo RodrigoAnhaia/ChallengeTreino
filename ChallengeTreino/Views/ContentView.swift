@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel: ViewModel = ViewModel()
+    @StateObject var viewModel: ViewModel = ViewModel(dataServive: MockedNetworkProvider())
     
     var body: some View {
         CustomTabView(viewModel: viewModel)

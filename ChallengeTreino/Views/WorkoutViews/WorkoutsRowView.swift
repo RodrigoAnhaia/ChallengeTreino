@@ -10,13 +10,13 @@ import SwiftUI
 struct WorkoutsRowView: View {
     @ObservedObject var viewModel: ViewModel
     @State private var showingSheet = false
-    @State var workout: Workout
+    @State var workout: Workout = Workout(name: 0, description: "", date: .now)
     
     var body: some View {
         VStack {
             List {
                 Section {
-                    ForEach(viewModel.workoutList, id: \.id) { workout in
+                    ForEach(viewModel.dataServive.requestWorkoutData(), id: \.id) { workout in
                         VStack(alignment: .leading) {
                             Text("\(workout.name)")
                                 .fontWeight(.medium)
@@ -59,5 +59,12 @@ struct WorkoutsRowView: View {
         .sheet(isPresented: $showingSheet) {
             EditWorkoutView(viewModel: viewModel, workout: $workout)
         }
+        .accentColor(Color(.label))
+    }
+}
+
+struct WorkoutsRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        WorkoutsRowView(viewModel: ViewModel(dataServive: MockedNetworkProvider()))
     }
 }

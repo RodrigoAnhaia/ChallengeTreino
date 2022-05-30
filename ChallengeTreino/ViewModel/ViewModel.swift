@@ -10,69 +10,51 @@ import UIKit
 @MainActor class ViewModel: ObservableObject {
     @Published var workoutList: [Workout] = []
     @Published var exercisesList: [Exercise] = []
+    var dataServive: DataServiceProtocol
     
-    init() {
-        listAllWorkout()
-        listAllExercise()
-        
+    init(dataServive: DataServiceProtocol) {
+        self.dataServive = dataServive
     }
     
-    // MARK: - Workout
-    func listAllWorkout() {
-        workoutList.append(Workout(name: 0, description: "Legs", date: .now))
-        workoutList.append(Workout(name: 1, description: "Chest", date: .now + 72))
+    
+    //MARK: - Workout
+    func fetchWorkoutData() -> [Workout] {
+        dataServive.requestWorkoutData()
     }
     
     func newWorkout(newName: Int, newDescription: String, newDate: Date) {
-        workoutList.append(Workout(name: newName, description: newDescription, date: newDate))
+        workoutList = fetchWorkoutData()
+        dataServive.newWorkout(newName: newName, newDescription: newDescription, newDate: newDate)
     }
     
-    func editWorkout(workout: Workout, newName: Int, newDescription: String, newDate: Date) {
-        if let row = self.workoutList.firstIndex(where: {$0.id == workout.id}) {
-            workoutList[row].name = newName
-            workoutList[row].description = newDescription
-            workoutList[row].date = newDate
-        }
+    func editeWorkout(workout: Workout, newName: Int, newDescription: String, newDate: Date) {
+        workoutList = fetchWorkoutData()
+        dataServive.editWorkout(workout: workout, newName: newName, newDescription: newDescription, newDate: newDate)
     }
     
     func deleteWorkout(workout: Workout) {
-        workoutList.remove(object: workout)
+        workoutList = fetchWorkoutData()
+        self.dataServive.deleteWorkout(workout: workout)
+        
     }
     
-    // MARK: - Exercise
-    func listAllExercise() {
-        exercisesList.append(Exercise(name: 0, image: "background", comments: "conveyor"))
-        exercisesList.append(Exercise(name: 1, image: "", comments: "bar"))
+    //MARK: - Exercise
+    func fetchExerciseData() -> [Exercise] {
+        dataServive.requestExerciseData()
     }
     
     func newExercise(newName: Int, newImage: String, newComments: String) {
-        exercisesList.append(Exercise(name: newName, image: newImage, comments: newComments))
+        exercisesList = fetchExerciseData()
+        dataServive.newExercise(newName: newName, newImage: newImage, newComments: newComments)
     }
     
     func editExercise(exercise: Exercise, newName: Int, newImage: String, newComments: String) {
-        if let row = self.exercisesList.firstIndex(where: {$0.id == exercise.id}) {
-            exercisesList[row].name = newName
-            exercisesList[row].image = newImage
-            exercisesList[row].comments = newComments
-        }
+        exercisesList = fetchExerciseData()
+        dataServive.editExercise(exercise: exercise, newName: newName, newImage: newImage, newComments: newComments)
     }
     
     func deleteExercise(exercise: Exercise) {
-        exercisesList.remove(object: exercise)
+        exercisesList = fetchExerciseData()
+        dataServive.deleteExercise(exercise: exercise)
     }
-}
-
-struct Workout: Identifiable, Equatable {
-    var id = UUID().uuidString
-    var name: Int
-    var description: String
-    var date: Date
-}
-
-struct Exercise: Identifiable, Equatable  {
-    var id = UUID().uuidString
-    var name: Int
-    var image: String
-    var comments: String 
-
 }

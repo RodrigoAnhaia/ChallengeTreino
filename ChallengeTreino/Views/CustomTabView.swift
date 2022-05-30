@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomTabView: View {
-    @ObservedObject var viewModel: ViewModel 
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         TabView {
@@ -31,9 +31,10 @@ struct CustomTabView: View {
     }
 }
 
-
 struct CustomTabView_Previews: PreviewProvider {
+    static let dataService = MockedNetworkProvider()
+    
     static var previews: some View {
-        CustomTabView(viewModel: ViewModel())
+        CustomTabView(viewModel: ViewModel(dataServive: dataService))
     }
 }

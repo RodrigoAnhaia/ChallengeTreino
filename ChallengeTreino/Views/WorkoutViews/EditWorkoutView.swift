@@ -52,11 +52,18 @@ struct EditWorkoutView: View {
             
             HStack(alignment: .top, spacing: 8.0) {
                 Button("Save") {
-                    viewModel.editWorkout(workout: workout, newName: name, newDescription: description, newDate: date)
+                    viewModel.editeWorkout(workout: workout, newName: name, newDescription: description, newDate: date)
                     dismiss()
                 }
                 .buttonStyle(PurpleGradienteButton())
             }
         }
+        .accentColor(Color(.label))
+    }
+}
+
+struct EditWorkoutView_Previews: PreviewProvider {
+    static var previews: some View {
+        EditWorkoutView(viewModel: ViewModel(dataServive: MockedNetworkProvider()), workout: .constant(Workout(name: 0, description: "Legs", date: .now)))
     }
 }

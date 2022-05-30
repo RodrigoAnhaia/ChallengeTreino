@@ -16,7 +16,7 @@ struct ExerciseRowView: View {
         VStack {
             List {
                 Section {
-                    ForEach(viewModel.exercisesList, id: \.id) { exercise in
+                    ForEach(viewModel.dataServive.requestExerciseData(), id: \.id) { exercise in
                         VStack(alignment: .leading) {
                             Text("\(exercise.name)")
                                 .fontWeight(.medium)
@@ -62,5 +62,14 @@ struct ExerciseRowView: View {
         .sheet(isPresented: $showingSheet) {
             EditExerciseView(viewModel: viewModel, exercise: $exercise)
         }
+        .accentColor(Color(.label))
+    }
+}
+
+struct ExerciseRowView_Previews: PreviewProvider {
+    static var dataService = MockedNetworkProvider()
+    
+    static var previews: some View {
+        ExerciseRowView(viewModel: ViewModel(dataServive: dataService), exercise: Exercise(name: 0, image: "background", comments: "xablabla"))
     }
 }

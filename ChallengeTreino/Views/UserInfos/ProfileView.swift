@@ -10,17 +10,25 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         VStack {
+            Spacer()
+            
             ProfCardView()
-                .padding(.bottom, 550)
             
-            //Charts
+            Spacer()
             
+            StatisticView()
+                .cornerRadius(20)
+            
+            Spacer()
         }
+        .background(Image("background").opacity(0.8))
+        .accentColor(Color(.label))
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            
     }
 }

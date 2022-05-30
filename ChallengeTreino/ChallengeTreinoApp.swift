@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct ChallengeTreinoApp: App {
-
     var body: some Scene {
         WindowGroup {
             ContentView()

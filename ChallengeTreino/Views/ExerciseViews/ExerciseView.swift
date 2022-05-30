@@ -22,17 +22,20 @@ struct ExerciseView: View {
                 .buttonStyle(PurpleCircleGradienteButton())
                 .padding(.leading, 220)
                 .sheet(isPresented: $showingSheet) {
-                    AddExerciseView(viewModel: viewModel, name: 0, image: "", comments: "")
+                    AddExerciseView(viewModel: viewModel)
                 }
             }
             .frame(maxWidth: .infinity)
             .background(.thinMaterial)
         }
+        .accentColor(Color(.label))
     }
 }
 
 struct ExerciseView_Previews: PreviewProvider {
+    static var dataService = MockedNetworkProvider()
+    
     static var previews: some View {
-        ExerciseView(viewModel: ViewModel())
+        ExerciseView(viewModel: ViewModel(dataServive: dataService))
     }
 }

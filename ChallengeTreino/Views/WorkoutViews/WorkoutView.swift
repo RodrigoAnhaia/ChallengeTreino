@@ -13,7 +13,7 @@ struct WorkoutView: View {
     
     var body: some View {
         VStack {
-            WorkoutsRowView(viewModel: viewModel, workout: .init(name: 0, description: "", date: .now))
+            WorkoutsRowView(viewModel: viewModel)
             
             VStack(alignment: .trailing) {
                 Button("") {
@@ -22,17 +22,18 @@ struct WorkoutView: View {
                 .buttonStyle(PurpleCircleGradienteButton())
                 .padding(.leading, 220)
                 .sheet(isPresented: $showingSheet) {
-                    AddWorkoutView(viewModel: viewModel, name: 0, description: "", date: .now)
+                    AddWorkoutView(viewModel: viewModel)
                 }
             }
             .frame(maxWidth: .infinity)
             .background(.thinMaterial)
         }
+        .accentColor(Color(.label))
     }
 }
 
 struct WorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutView(viewModel: ViewModel())
+        WorkoutView(viewModel: ViewModel(dataServive: MockedNetworkProvider()))
     }
 }
